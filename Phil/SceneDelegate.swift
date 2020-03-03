@@ -7,11 +7,11 @@
 //
 
 import UIKit
+import Branch
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -47,7 +47,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+    
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        Branch.getInstance().continue(userActivity)
+        
+    }
 
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard let context = URLContexts.first else { return }
+        Branch.getInstance().application(nil, open: context.url, sourceApplication: context.options.sourceApplication, annotation: context.options.annotation)
+        //BranchManager.handleOpenUrl(url: context.url, sourceApplication: context.options.sourceApplication, annotation: context.options.annotation)
+    }
 
 }
 

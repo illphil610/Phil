@@ -1,0 +1,6 @@
+framework module Pods_Phil {
+  umbrella header "Pods-Phil-umbrella.h"
+
+  export *
+  module * { export * }
+}

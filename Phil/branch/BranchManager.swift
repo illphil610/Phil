@@ -20,10 +20,6 @@ class BranchManager {
         }
     }
     
-    static func handleOpenUrl(url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        Branch.getInstance().application(nil, open: url, sourceApplication: sourceApplication, annotation: annotation)
-    }
-    
     static func isWebOnlyLink(for webOnlyBranchParam: AnyObject?) -> Bool {
         guard let webLinkParamValue = webOnlyBranchParam as? String else { return false }
         return webLinkParamValue.caseInsensitiveCompare("true") == .orderedSame ? true : false
@@ -34,13 +30,13 @@ fileprivate extension BranchManager {
     
     static func determineLinkBehavior(for branchLinkModel: BranchLinkModel) {
         guard branchLinkModel.clickedBranchLink else { return }
-        
-        guard let deeplinkPath = branchLinkModel.deepLinkPath else {
-            guard branchLinkModel.webOnlyLink, let canonicalUrl = branchLinkModel.websiteUrl, let url = URL(string: canonicalUrl) else { return }
+        switch branchLinkModel.webOnlyLink {
+        case true:
+            guard let canonicalUrl = branchLinkModel.websiteUrl, let url = URL(string: canonicalUrl) else { return }
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            return
+        case false:
+            guard let deeplinkPath = branchLinkModel.deepLinkPath else { return }
+            DeeplinkNavigator.shared.navigate(with: deeplinkPath)
         }
-        
-        DeeplinkNavigator.shared.navigate(with: deeplinkPath)
     }
 }

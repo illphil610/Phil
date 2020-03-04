@@ -9,15 +9,11 @@
 import Foundation
 
 struct BranchLinkModel {
-    // MARK: Properties
-
     let clickedBranchLink: Bool
     let deepLinkPath: String?
     let websiteUrl: String?
     let webOnlyLink: Bool
     let encodedUrl: String?
-
-    // MARK: Initialization
 
     init(with branchLinkParams: [String: AnyObject]) {
         clickedBranchLink = branchLinkParams[BranchLinkKeys.clickedBranchLink] as? Bool ?? false

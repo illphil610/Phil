@@ -62,16 +62,16 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		616D21C6240D5FE700849A81 /* branch */ = {
+		612CE2DE241003A300F206C3 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				616D21C7240D5FFB00849A81 /* BranchManager.swift */,
-				619A54A5240D9CF3006E754A /* BranchLinkModel.swift */,
+				61B3A36B240EDBE600DAED06 /* ColorListViewController.swift */,
+				61EA6AF923F2131D002D3D6F /* ColorViewController.swift */,
 			);
-			path = branch;
+			path = controllers;
 			sourceTree = "<group>";
 		};
-		619A54A8240DAEC8006E754A /* navigation */ = {
+		612CE2DF241003AF00F206C3 /* navigation */ = {
 			isa = PBXGroup;
 			children = (
 				619A54A9240DAEDD006E754A /* DeeplinkNavigator.swift */,
@@ -79,7 +79,7 @@
 			path = navigation;
 			sourceTree = "<group>";
 		};
-		619A54AE240DB4E0006E754A /* model */ = {
+		612CE2E0241003BD00F206C3 /* model */ = {
 			isa = PBXGroup;
 			children = (
 				619A54AF240DB4F0006E754A /* Color.swift */,
@@ -87,13 +87,13 @@
 			path = model;
 			sourceTree = "<group>";
 		};
-		61B3A36D240EF14000DAED06 /* controllers */ = {
+		618F831A240F152B00B32432 /* branch */ = {
 			isa = PBXGroup;
 			children = (
-				61B3A36B240EDBE600DAED06 /* ColorListViewController.swift */,
-				61EA6AF923F2131D002D3D6F /* ColorViewController.swift */,
+				619A54A5240D9CF3006E754A /* BranchLinkModel.swift */,
+				616D21C7240D5FFB00849A81 /* BranchManager.swift */,
 			);
-			path = controllers;
+			path = branch;
 			sourceTree = "<group>";
 		};
 		61EA6AE923F2131D002D3D6F = {
@@ -117,13 +117,13 @@
 		61EA6AF423F2131D002D3D6F /* Phil */ = {
 			isa = PBXGroup;
 			children = (
-				619A54AE240DB4E0006E754A /* model */,
-				619A54A8240DAEC8006E754A /* navigation */,
-				616D21C6240D5FE700849A81 /* branch */,
-				61B3A36D240EF14000DAED06 /* controllers */,
+				61B09D7023F2194A0090DD1E /* Phil.entitlements */,
+				612CE2E0241003BD00F206C3 /* model */,
+				612CE2DF241003AF00F206C3 /* navigation */,
+				612CE2DE241003A300F206C3 /* controllers */,
+				618F831A240F152B00B32432 /* branch */,
 				61EA6AF523F2131D002D3D6F /* AppDelegate.swift */,
 				61EA6AF723F2131D002D3D6F /* SceneDelegate.swift */,
-				61B09D7023F2194A0090DD1E /* Phil.entitlements */,
 				61EA6AFB23F2131D002D3D6F /* Main.storyboard */,
 				61EA6AFE23F2131E002D3D6F /* Assets.xcassets */,
 				61EA6B0023F2131E002D3D6F /* LaunchScreen.storyboard */,

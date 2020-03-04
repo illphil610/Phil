@@ -15,7 +15,8 @@ class ColorListViewController: UIViewController {
             colorTableView.delegate = self
             colorTableView.dataSource = self
             colorTableView.register(
-                UITableViewCell.self, forCellReuseIdentifier: "cell"
+                UITableViewCell.self,
+                forCellReuseIdentifier: "cell"
             )
         }
     }

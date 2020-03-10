@@ -36,7 +36,7 @@ fileprivate extension BranchManager {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         case false:
             guard let deeplinkPath = branchLinkModel.deepLinkPath else { return }
-            DeeplinkNavigator.shared.navigate(with: deeplinkPath)
+            DeeplinkNavigator.navigate(with: deeplinkPath)
         }
     }
 }

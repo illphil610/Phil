@@ -9,9 +9,9 @@
 import UIKit
 
 class DeeplinkNavigator {
-    static let shared = DeeplinkNavigator()
+    //static let shared = DeeplinkNavigator()
     
-    func navigate(with deepLinkColor: String) {
+    static func navigate(with deepLinkColor: String) {
         guard
             let window = UIApplication.shared.windows.first(where: { $0.isKeyWindow }),
             let navigationController = window.rootViewController as? UINavigationController else { return }
